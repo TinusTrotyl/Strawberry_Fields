@@ -9,53 +9,43 @@
 <p> Let's grow strawberries ! </p>
 <p> But . . . all kids in the hood are all fond on strawberries, we need to protect our precious plants by placing a fence. </p>
 <p> The fence is made of 4 fence parts (a, b, c, d) of (but not necessary) different lengths. They are going to be placed around the field in a anticlockwise order. (fig.1). </p>
-<p> <img  title="fig1" src="{{MEDIA}}fig1.png" alt="fig1" style="max-height: 240px"/> </p>
 
+<p> Up to you to write a function which returns the angle (in degrees) of the inner corner between first and last fence part (a and d), so that the fence encloses the maximum area for our strawberry bed. </p>
 
+<p> Thus your function is given four numbers (a, b, c, d) representing the length of the four fence parts and has to return the angle (fig.1) measured from the inside rounded to whole degrees for the maximum enclosed area. </p>
 
-<!-- Explain input and output values -->
-<!--
+<p style="text-align: center;">> <img  title="fig1" src="{{MEDIA}}fig1.png" alt="fig1" style="max-height: 240px"/> </p>
 
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
-</p>
+<!-- input and output values -->
 
-<p>
-    <strong>Output: </strong> Int. 
-</p>
+<p> <strong> Input: </strong> Four arguments: All integers </p>
+<p><strong> Output : </strong> A number, float or integer. </p>
+<p><strong> Acuracy: </strong> one tenth of a degree. </p>
+<p> </p>
 
--->
 <!-- Put some usage examples -->
-<!--
-<div class="for_info_only">
-    <p>
-        <strong>Example:</strong>
-    </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+<div class="for_info_only">
+<p> <strong>Example:</strong> </p>
+<pre class="brush: python">
+    strawberryfield(100, 100, 100, 100) == 90
+    strawberryfield(200, 100, 100, 100) == 60
+    strawberryfield(300, 141.421356, 100, 141.421356) == 45
+    strawberryfield(100, 141.421356, 300, 141.421356) == 135
+    strawberryfield(300, 100, 100, 100) == 0
+    strawberryfield(82, 117, 203, 123) == 119
 </pre>
-{% else %}
-<pre class="brush: python">sum_two(2, 3) == 5
-sum_two(5, 7) == 12
-</pre>
-{% endif %}
 </div>
--->
-<!-- Here you can explain how it can be used in development and what is usage of this. -->
-<!-- The section is optional -->
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
     <i> Surveying </i>
 </p>
+<p></p>
 
-<!-- Here you can explain some constraints for input-->
-<!-- The section is optional -->
-<!--
-<p>
-    <strong>Precondition:</strong>
-    <i>both given ints should be between -1000 and 1000</i>
-</p>
--->
+<!-- constraints for input-->
+
+<p> <strong>Precondition:</strong> </p>
+<p> ∀ length of all sides : length of one side <= sum length of three other sides </p>
+<p> ∀ angle α of all corners : 0° <= α <= 180° </p>
+
