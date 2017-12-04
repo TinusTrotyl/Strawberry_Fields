@@ -1,16 +1,16 @@
-def sum_two(a, b):
-    """
-        sums two passed arguments
-    """
+def strawberryfield(a, b, c, d):
+
     # your code here
-    return None
+    
+    return alpha
 
 
 if __name__ == '__main__':
-    print("Example:")
-    print(sum_two(3, 2))
+
     
     # These "asserts" are used for self-checking and not for an auto-testing
-    assert sum_two(3, 2) == 5, "First"
-    assert sum_two(5, 7) == 12, "Second"
+    assert strawberryfield(100, 100, 100, 100) == 90, "square"
+    assert strawberryfield(100, 100, 0, 100) == 60, "triangle"
+    assert strawberryfield(82, 117, 203, 123) == 119, "unequal sides"
+    
     print("Coding complete? Click 'Check' to earn cool rewards!")
