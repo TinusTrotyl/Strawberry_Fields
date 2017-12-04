@@ -6,11 +6,11 @@ def strawberryfield(a, b, c, d):
 
 
 if __name__ == '__main__':
-
     
     # These "asserts" are used for self-checking and not for an auto-testing
-    assert strawberryfield(100, 100, 100, 100) == 90, "square"
-    assert strawberryfield(100, 100, 0, 100) == 60, "triangle"
-    assert strawberryfield(82, 117, 203, 123) == 119, "unequal sides"
+    assert strawberryfield(100, 100, 100, 100) == 90,        "first example"
+    assert strawberryfield(200, 100, 100, 100) == 60,        "second example"   
+    strawberryfield(300, 141.421356, 100, 141.421356) == 45, "third example"
+    strawberryfield(203, 123, 82, 117) == 60,8               "fourth example"
     
-    print("Coding complete? Click 'Check' to earn cool rewards!")
+    print("Coding complete? Click 'Check' !")
