@@ -13,19 +13,19 @@ TESTS = {
         {
             "input": [100, 100, 100, 100],
             "answer": 90,
-            "explanation": ""
+            "explanation": None
         },
         {
             "input": [200, 100, 100, 100],
             "answer": 60,
-            "explanation": ""
+            "explanation": None
         }
     ],
     "Extra": [
         {
             "input": [100, 100, 0, 100],
             "answer": 60,
-            "explanation": ""
+            "explanation": None
         },
     ]
 }
