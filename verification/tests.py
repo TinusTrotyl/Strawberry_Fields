@@ -25,7 +25,7 @@ TESTS = {
         {
             "input": [100, 100, 0, 100],
             "answer": 60,
-            "explanation": "6+3=?"
+            "explanation": ""
         },
     ]
 }
