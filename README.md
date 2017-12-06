@@ -68,10 +68,9 @@ Illustrations should be created with respect to our colors guide.
 ##### Icons
 Icons for the task are placed inside the `info/logo` folder.
 Icons are created as a pair: **disabled.svg** for unsolved tasks and **enabled.svg** for solved tasks.
-In the task runner you can see both icons with click to it.
-Icons should be created with specified icons' colors from our colors
-guide `info/media/color.pdf`.
-Icons should be 128x128px and placed inside a grey colored block (size 116x116px) with corners rounded to a radius of 10px.
+In the task runner you will see one of these where you can click on it.
+Icons should be created with specified icons' colors from our colors guide: `info/media/color.pdf`.
+Icons should be 128x128px and placed inside a grey colored block (size 116x116px) , outer corners rounded to a radius of 10px.
 You can use the given templates.
 
 #### story.html
