@@ -13,7 +13,7 @@ your file and naming conventions.
 
 ## Tasks examples
 
-[Traingle angles](https://github.com/Bryukh-Checkio-Tasks/checkio-task-triangle-angles)  
+[Triangle angles](https://github.com/Bryukh-Checkio-Tasks/checkio-task-triangle-angles)  
 
 [Magic square](https://github.com/Bryukh-Checkio-Tasks/checkio-task-magic-square)
 
@@ -90,20 +90,20 @@ A summary of the task.
 It's **not necessary** to change it.
 Further description of this will be added later.
 ##### templates.html
-This file describes layout and structure for the tests explanation or tryit.
+This file describes layout and structure for the tests explanation or “try-it”.
 It's **not necessary** to change it.
 Further description of this will be added later.
 
 #### editor/animation Folder
 
 ##### init.js
-This file describes an animation for the tests explanation or tryit.
+This file describes an animation for the tests explanation or “try-it”.
 At `python: 'function name'` and `js: 'function name'` you can state the identifier your function is to be called with (line 11, 12). 
 It's **not necessary** to change it.
 Further description of this will be added later.
 
 ##### init.css
-This file describes styles for the tests explanation or tryit.
+This file describes styles for the tests explanation or “try-it”.
 It's **not necessary** to change it.
 Further description of this will be added later.
 
