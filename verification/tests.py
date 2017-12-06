@@ -19,7 +19,7 @@ TESTS = {
           "explanation": None  },
         
         { "input": [300, 141.421356, 100, 141.421356],
-          "answer": 60,
+          "answer": 45,
           "explanation": None },
         
         { "input": [203, 123, 82, 117],
