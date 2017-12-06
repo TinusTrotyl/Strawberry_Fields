@@ -46,4 +46,5 @@ TESTS = {
         { "input": [10 , 10 , 10 , 30],
             "answer": 0,
             "explanation": None },
+    ],
 }
