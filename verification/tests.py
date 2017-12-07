@@ -12,19 +12,19 @@ TESTS = {
     "Basics": [
         {  "input": [100, 100, 100, 100],
            "answer": 90,
-           "explanation": None  },
+           "explanation": "a1.png"  },
         
         { "input": [200, 100, 100, 100],
           "answer": 60,
-          "explanation": None  },
+          "explanation": "a2.png"  },
         
         { "input": [300, 141.421356, 100, 141.421356],
           "answer": 45,
-          "explanation": None },
+          "explanation": "a3.png" },
         
         { "input": [203, 123, 82, 117],
           "answer": 60.8,
-          "explanation": None },
+          "explanation": "a4.png" },
         
         
         
@@ -32,7 +32,7 @@ TESTS = {
     "Extra": [
         { "input": [25.5 , 60.3 , 52.3 , 29],
           "answer": 128.8,
-          "explanation": None },
+          "explanation": '"a7.png" },
        
         { "input": [11 , 96 , 84 , 2],
             "answer": 176.8,
@@ -41,10 +41,10 @@ TESTS = {
     "Edge": [
         { "input": [100, 100, 0, 100],
             "answer": 60,
-            "explanation": None },
+            "explanation": "a5.png" },
         
         { "input": [10 , 10 , 10 , 30],
             "answer": 0,
-            "explanation": None },
+            "explanation": "a6.png" },
     ],
 }
