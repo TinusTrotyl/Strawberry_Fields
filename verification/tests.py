@@ -14,12 +14,12 @@ TESTS = {
            "answer": 90,
            "explanation": None },
         
-        { "input": [200, 100, 100, 100],
-          "answer": 60,
+        { "input": [150, 100, 150, 100],
+          "answer": 90,
           "explanation": None },
         
-        { "input": [300, 141.421356, 100, 141.421356],
-          "answer": 45,
+        { "input": [150, 100, 50, 100],
+          "answer": 60,
           "explanation": None },
         
         { "input": [203, 123, 82, 117],
