@@ -24,10 +24,7 @@ TESTS = {
         
         { "input": [203, 123, 82, 117],
           "answer": 60.8,
-          "explanation": None },
-        
-        
-        
+          "explanation": None },        
     ],
     "Extra": [
         { "input": [25.5 , 60.3 , 52.3 , 29],
@@ -45,6 +42,6 @@ TESTS = {
         
         { "input": [10 , 10 , 10 , 30],
            "answer": 0,
-           "explanation": none },
+           "explanation": None },
     ],
 }
