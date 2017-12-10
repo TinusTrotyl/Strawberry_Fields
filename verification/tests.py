@@ -29,19 +29,19 @@ TESTS = {
     "Extra": [
         { "input": [25.5 , 60.3 , 52.3 , 29],
           "answer": 128.8,
-          "explanation": None },
+          "explanation": 'quadrilateral' },
        
         { "input": [11 , 96 , 84 , 2],
            "answer": 176.8,
-           "explanation": None },
+           "explanation": 'quadrilateral' },
     ],
     "Edge": [
         { "input": [100, 100, 0, 100],
            "answer": 60,
-           "explanation": None },
+           "explanation": 'triangle\n(side c has zero length)' },
         
         { "input": [10 , 10 , 10 , 30],
            "answer": 0,
-           "explanation": None },
+           "explanation": 'no area, folded 180°' },
     ],
 }
