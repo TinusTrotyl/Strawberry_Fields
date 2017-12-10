@@ -37,7 +37,7 @@ TESTS = {
         
          { "input": [10 , 10 , 10 , 30],
            "answer": 0,
-           "explanation": 'no area/nfence folded flat/n0°, 0°, 180°, 180°' },
+           "explanation": 'no area/nfence folded flat/n0°, 180°, 0°, 180°' },
         
         { "input": [100, 100, 0, 100],
            "answer": 60,
