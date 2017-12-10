@@ -27,20 +27,24 @@ TESTS = {
           "explanation": 'quadrilateral'},        
     ],
     "Extra": [
+         { "input": [25 , 141.421, 175, 141.421],
+          "answer": 135,
+          "explanation": 'trapezium' },
+        
+         { "input": [75, 150, 150, 75],
+          "answer": 126.9,
+          "explanation": 'kite' },         
+        
         { "input": [25.5 , 60.3 , 52.3 , 29],
           "answer": 128.8,
           "explanation": 'quadrilateral' },
-       
-        { "input": [11 , 96 , 84 , 2],
-           "answer": 176.8,
-           "explanation": 'quadrilateral' },
         
          { "input": [10 , 10 , 10 , 30],
            "answer": 0,
-           "explanation": 'no area/nfence folded flat/n0°, 180°, 0°, 180°' },
+           "explanation": 'no area (0°, 180°, 0°, 180°)' },
         
         { "input": [100, 100, 0, 100],
            "answer": 60,
-           "explanation": 'triangle\n(side c has zero length)' },
+           "explanation": 'triangle (side c has zero length)' },
     ],
 }
