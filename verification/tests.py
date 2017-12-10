@@ -34,14 +34,13 @@ TESTS = {
         { "input": [11 , 96 , 84 , 2],
            "answer": 176.8,
            "explanation": 'quadrilateral' },
-    ],
-    "Edge": [
+        
+         { "input": [10 , 10 , 10 , 30],
+           "answer": 0,
+           "explanation": 'no area/nfence folded flat/n0°, 0°, 180°, 180°' },
+        
         { "input": [100, 100, 0, 100],
            "answer": 60,
            "explanation": 'triangle\n(side c has zero length)' },
-        
-        { "input": [10 , 10 , 10 , 30],
-           "answer": 0,
-           "explanation": 'no area, folded 180°' },
     ],
 }
