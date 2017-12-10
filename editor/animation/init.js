@@ -3,8 +3,9 @@
 requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
     function (extIO, $) {
         
-        function sfieldCanvas(dom, dataInp, dataAnswer) {
+        function sfieldCanvas(dom, dataInp, explanation, dataAnswer) {
 
+            const canvas_div = document.createElement('div');
             const [a, b, c, d] = dataInp;
             const color = {
                 blue: "#65A1CF",
@@ -20,12 +21,13 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             const attr = {
                 line1: {
                     'stroke-width': stroke_width,
-                    'stroke': color.orange
+                    'stroke': color.orange,
+                    //'arrow-end': 'block-wide-long',
                 },
                 line2: {
                     'stroke-width': stroke_width,
-                    'stroke': color.base
-                }
+                    'stroke': color.base,
+                },
             };
 
             // target corner
@@ -49,31 +51,37 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             const height = Math.abs(ay > by ? ay: by);
 
             // canvas
-            const canvas = Raphael(dom, 
+            const canvas = Raphael(canvas_div, 
                 dataAnswer ? width+stroke_width : 50, 
-                dataAnswer ? height+stroke_width : 50,
+                dataAnswer ? height+stroke_width: 50,
                 0, 0);
 
-            if (! dataAnswer)
-                return
+            if (dataAnswer) {
+                // draw
+                const sx = 0 - x_min + stroke_width / 2,
+                      sy = height + stroke_width / 2;
 
-            // draw
-            const sx = 0-x_min,
-                  sy = height + stroke_width,
-                  stw = stroke_width / 2;
+                canvas.path(createLinePath(
+                    sx, sy,
+                    sx+a, sy)).attr(attr.line1);
+                canvas.path(createLinePath(
+                    sx, sy,
+                    sx+ax, sy-ay)).attr(attr.line1);
+                canvas.path(createLinePath(
+                    sx+a, sy,
+                    sx+bx, sy-by)).attr(attr.line2);
+                canvas.path(createLinePath(
+                    sx+ax, sy-ay,
+                    sx+bx, sy-by)).attr(attr.line2);
+            }
 
-            canvas.path(createLinePath(
-                sx+stw, sy-stw,
-                sx+a+stw, sy-stw)).attr(attr.line1);
-            canvas.path(createLinePath(
-                sx+stw, sy-stw,
-                sx+ax+stw, sy-ay-stw)).attr(attr.line1);
-            canvas.path(createLinePath(
-                sx+a+stw, sy-stw,
-                sx+bx+stw, sy-by-stw)).attr(attr.line2);
-            canvas.path(createLinePath(
-                sx+ax+stw, sy-ay-stw,
-                sx+bx+stw, sy-by-stw)).attr(attr.line2);
+            dom.appendChild(canvas_div);
+
+            // explanation text
+            const text_p = document.createElement('p');
+            text_p.innerHTML = explanation;
+            text_p.style.textAlign = 'center';
+            dom.appendChild(text_p);
         }
 
         var $tryit;
@@ -89,6 +97,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 sfieldCanvas(
                     $expl[0],
                     data.in,
+                    data.ext.explanation,
                     data.ext.answer
                 );
             },
