@@ -12,19 +12,19 @@ TESTS = {
     "Basics": [
         {  "input": [100, 100, 100, 100],
            "answer": 90,
-           "explanation": 'square'},
+           "explanation": 'square' },
         
         { "input": [150, 100, 150, 100],
           "answer": 90,
-          "explanation": 'rectangle'},
+          "explanation": 'rectangle' },
         
         { "input": [150, 100, 50, 100],
           "answer": 60,
-          "explanation": 'trapezium'},
+          "explanation": 'trapezium' },
         
         { "input": [203, 123, 82, 117],
           "answer": 60.8,
-          "explanation": 'quadrilateral'},        
+          "explanation": 'quadrilateral' },        
     ],
     "Extra": [
          { "input": [25 , 141.421, 175, 141.421],
