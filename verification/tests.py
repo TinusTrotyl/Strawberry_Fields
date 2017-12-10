@@ -28,7 +28,7 @@ TESTS = {
     ],
     "Extra": [
          { "input": [25 , 141.421, 175, 141.421],
-          "answer": 135,
+          "answer": 122,
           "explanation": 'trapezium' },
         
          { "input": [75, 150, 150, 75],
