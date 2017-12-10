@@ -30,6 +30,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 line1: {
                     'stroke-width': stroke_width,
                     'stroke': color.orange,
+                    'marker-end:url(#Arrow1Mend)'
                     //'arrow-end': 'block-wide-long',
                 },
                 line2: {
