@@ -5,6 +5,14 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
         
         function sfieldCanvas(dom, dataInp, explanation, dataAnswer) {
 
+            function getArc(cx,cy,r,rad) {
+                const x = cx+r*Math.cos(rad),
+                      y = cy-r*Math.sin(rad);
+                let path = '';
+                
+                return [["M",cx+r,cy], ["A",r,r,0,0,0,x,y]];
+            }
+
             const canvas_div = document.createElement('div');
             const [a, b, c, d] = dataInp;
             const color = {
@@ -73,8 +81,13 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 canvas.path(createLinePath(
                     sx+ax, sy-ay,
                     sx+bx, sy-by)).attr(attr.line2);
+                // arc
+                canvas.path(
+                        getArc(sx, sy, 10, angle_a)
+                    ).attr({"stroke-width":1, 'stroke': color.orange}); 
             }
 
+            canvas_div.style.textAlign = 'center';
             dom.appendChild(canvas_div);
 
             // explanation text
