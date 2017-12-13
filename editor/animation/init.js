@@ -1,4 +1,4 @@
-//Dont change it
+﻿//Dont change it
 //Dont change it
 requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
     function (extIO, $) {
@@ -13,28 +13,46 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 return [["M",cx+r,cy], ["A",r,r,0,0,0,x,y]];
             }
 
-            const canvas_div = document.createElement('div');
+            function createLinePath(x1, y1, x2, y2) {
+                return "M" + x1 + "," + y1 + "L" + x2 + "," + y2;
+            }
+
             const [a, b, c, d] = dataInp;
             const color = {
                 blue: "#65A1CF",
                 base: "#294270",
                 orange: "#FAAB00",
+                darkgray: "#696969",
             };
 
-            function createLinePath(x1, y1, x2, y2) {
-                return "M" + x1 + "," + y1 + "L" + x2 + "," + y2;
-            }
-
+            const h_margin = 140;
+            const t_margin = 10;
+            const b_margin = 33;
             const stroke_width = 2;
             const attr = {
                 line1: {
                     'stroke-width': stroke_width,
                     'stroke': color.orange,
-                    //'arrow-end': 'block-wide-long',
+                    'arrow-end': 'block-wide-long',
                 },
                 line2: {
                     'stroke-width': stroke_width,
                     'stroke': color.base,
+                },
+                text: {
+                    degree: {
+                        'stroke-width': 0,
+                        'fill': color.orange,
+                        "font-size": 12,
+                        'font-family': "Verdana",
+                        'text-anchor': "start",
+                    },
+                    explanation: {
+                        'stroke-width': 0,
+                        'fill': color.darkgray,
+                        "font-size": 15,
+                        'font-family': "Verdana",
+                    },
                 },
             };
 
@@ -59,15 +77,16 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             const height = Math.abs(ay > by ? ay: by);
 
             // canvas
-            const canvas = Raphael(canvas_div, 
-                dataAnswer ? width+stroke_width : 50, 
-                dataAnswer ? height+stroke_width: 50,
-                0, 0);
+            const canvas_width
+                = dataAnswer ? width + h_margin: 300;
+            const canvas_height
+                = dataAnswer ? height + t_margin + b_margin: 90;
+            const canvas = Raphael(dom, canvas_width, canvas_height, 0, 0);
 
             if (dataAnswer) {
-                // draw
-                const sx = 0 - x_min + stroke_width / 2,
-                      sy = height + stroke_width / 2;
+                // draw lines
+                const sx = 0 - x_min + h_margin / 2,
+                      sy = canvas_height - b_margin;
 
                 canvas.path(createLinePath(
                     sx, sy,
@@ -85,16 +104,17 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 canvas.path(
                         getArc(sx, sy, 10, angle_a)
                     ).attr({"stroke-width":1, 'stroke': color.orange}); 
+
+                // degree text
+                const tx = Math.cos(angle_a/2) * 15;
+                const ty = Math.sin(angle_a/2) * 15;
+                canvas.text(sx+tx, sy-ty-2,
+                    dataAnswer + '°').attr(attr.text.degree);
             }
 
-            canvas_div.style.textAlign = 'center';
-            dom.appendChild(canvas_div);
-
             // explanation text
-            const text_p = document.createElement('p');
-            text_p.innerHTML = explanation;
-            text_p.style.textAlign = 'center';
-            dom.appendChild(text_p);
+            canvas.text(canvas_width / 2, canvas_height - 15,
+                explanation).attr(attr.text.explanation);
         }
 
         var $tryit;
