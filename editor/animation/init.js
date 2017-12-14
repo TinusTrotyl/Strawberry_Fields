@@ -104,8 +104,8 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 canvas.path(
                         getArc(sx, sy, 10, angle_a)
                     ).attr({"stroke-width":1, 'stroke': color.orange});
-			}
-			else {
+	        }
+	        else {
 				// the zero case exeption
 				const sx = 0 - x_min + h_margin / 2,
                       sy = canvas_height - b_margin;
