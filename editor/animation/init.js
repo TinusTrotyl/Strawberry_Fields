@@ -2,14 +2,14 @@
 //Dont change it
 requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
     function (extIO, $) {
-
+        
         function sfieldCanvas(dom, dataInp, explanation, dataAnswer) {
 
             function getArc(cx,cy,r,rad) {
                 const x = cx+r*Math.cos(rad),
                       y = cy-r*Math.sin(rad);
                 let path = '';
-
+                
                 return [["M",cx+r,cy], ["A",r,r,0,0,0,x,y]];
             }
 
@@ -61,7 +61,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                                         / (2 * (a * d + c * b)));
             const ax = Math.cos(angle_a) * d;
             const ay = Math.sin(angle_a) * d;
-
+            
             // other corner
             const angle_b = Math.acos((b**2 + a**2 - d**2 - c**2)
                                         / (2 * (b * a + d * c)));
@@ -103,37 +103,14 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 // arc
                 canvas.path(
                         getArc(sx, sy, 10, angle_a)
-                    ).attr({"stroke-width":1, 'stroke': color.orange});
-	    }
-	    else {
-		// the zero case exeption
-		const sx = 0 - x_min + h_margin / 2,
-                      sy = canvas_height - b_margin;
-                // reverse line(2,1) order
-                // line "B"
-                canvas.path(createLinePath(
-                    sx+a, sy,
-                    sx+a+b, sy)).attr(attr.line2);
-                // line "C"
-                canvas.path(createLinePath(
-                    sx+d, sy,
-                    sx+d+c, sy)).attr(attr.line2);
-                // line "A"
-		canvas.path(createLinePath(
-		    sx, sy,
-		    sx+a, sy)).attr(attr.line1);
-		// line "D"
-		canvas.path(createLinePath(
-		    sx, sy,
-                    sx+d, sy)).attr(attr.line1);
-            }
-			
-            // degree text
-            const tx = Math.cos(angle_a/2) * 15;
-            const ty = Math.sin(angle_a/2) * 15;
-            canvas.text(sx+tx, sy-ty-2,
-                dataAnswer + '°').attr(attr.text.degree);
+                    ).attr({"stroke-width":1, 'stroke': color.orange}); 
 
+                // degree text
+                const tx = Math.cos(angle_a/2) * 15;
+                const ty = Math.sin(angle_a/2) * 15;
+                canvas.text(sx+tx, sy-ty-2,
+                    dataAnswer + '°').attr(attr.text.degree);
+            }
 
             // explanation text
             canvas.text(canvas_width / 2, canvas_height - 15,
