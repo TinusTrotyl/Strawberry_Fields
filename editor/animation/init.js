@@ -104,10 +104,10 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 canvas.path(
                         getArc(sx, sy, 10, angle_a)
                     ).attr({"stroke-width":1, 'stroke': color.orange});
-	        }
-	        else {
-				// the zero case exeption
-				const sx = 0 - x_min + h_margin / 2,
+	    }
+	    else {
+		// the zero case exeption
+		const sx = 0 - x_min + h_margin / 2,
                       sy = canvas_height - b_margin;
                 // reverse line(2,1) order
                 // line "B"
@@ -119,14 +119,14 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                     sx+d, sy,
                     sx+d+c, sy)).attr(attr.line2);
                 // line "A"
-				canvas.path(createLinePath(
-				    sx, sy,
-				    sx+a, sy)).attr(attr.line1);
-				// line "D"
-				canvas.path(createLinePath(
-				    sx, sy,
+		canvas.path(createLinePath(
+		    sx, sy,
+		    sx+a, sy)).attr(attr.line1);
+		// line "D"
+		canvas.path(createLinePath(
+		    sx, sy,
                     sx+d, sy)).attr(attr.line1);
-			}
+            }
 			
             // degree text
             const tx = Math.cos(angle_a/2) * 15;
