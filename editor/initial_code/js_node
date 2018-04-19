@@ -1,8 +1,6 @@
 "use strict";
 
-function sumTwo(a, b) {
-    // sums two passed arguments
-
+function strawberryfield(a, b, c, d) {
     // your code here
     return 0;
 }
@@ -10,10 +8,12 @@ function sumTwo(a, b) {
 var assert = require('assert');
 if (!global.is_checking) {
     console.log('Example:')
-    console.log(sumTwo(3, 2))
+    console.log(strawberryfield(100, 100, 100, 100))
 
     // These "asserts" are used for self-checking and not for an auto-testing
-    assert.equal(sumTwo(3, 2), 5)
-    assert.equal(sumTwo(5, 7), 12)
+    assert.equal(strawberryfield(100, 100, 100, 100), 90)
+    assert.equal(strawberryfield(150, 100, 150, 100), 90)
+    assert.equal(strawberryfield(150, 100, 50, 100), 60))
+    assert.equal(strawberryfield(203, 123, 82, 117), 60.8)
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
